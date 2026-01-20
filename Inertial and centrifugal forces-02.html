@@ -1,0 +1,84 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Inertial and centrifugal forces</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">べん毛モーターの回転計測において，慣性力，遠心力は考慮すべきか？ </p>
+<p class="Blue-Large-Bold">レイノルズ数からの検討</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED"><a href="https://en.wikipedia.org/wiki/Reynolds_number" target="_blank">レイノルズ数</a>は，流体力学における慣性力と粘性力と比で定義される値で，無次元となります．</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle Re =   \frac{ u \ L}{\nu} = \frac{\rho \ L \ u}{\mu} \)</p>
+<p class="X-Large-Bold-RED">ここで，<br />
+　u　：　代表速度 [m/s]<br />
+　L　：　代表長さ  [m]<br />
+　ν　：　動粘性係数 [m<sup>2</sup>/s]<br />
+　ρ　：　密度 [kg/m<sup>3</sup>]<br />
+　μ　：　粘性係数 [Pa・s]</p>
+<p class="X-Large-Bold-RED">次元は，</p>
+<p class="X-Large-Bold-RED">\( \Large   \displaystyle \frac{ \frac{m}{s}  \cdot m}{\frac{m^2}{s}} = \frac{kg}{m^3} \cdot m \cdot \frac{m}{s} \frac{m^2 \ s^2}{kg \ m \ s} = 1\)</p>
+<p class="X-Large-Bold-RED">となり，無次元となります．</p>
+<p class="X-Large-Bold-RED">ただ，私の分野では，<span class="Blue">動粘性係数はあまり使わない，速度は，ｖでしょう！粘性係数はμ？μはミクロンという接頭語なので違和感がある，</span><span class="Red-Bold">粘性係数はη</span><span class="Blue">でしょう！</span>，ということから，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle Re =\frac{\rho \ L \ v}{\eta} \)</p>
+<p class="X-Large-Bold-RED">　v　：　代表速度 [m/s]<br />
+　η　：　粘性係数 [Pa・s]</p>
+<p class="X-Large-Bold-RED">を使わさせていただきます．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="Red-Bold">実際の実験でのパラメータ</p>
+<p class="X-Large-Bold-RED">水溶液中のポリスチレンビーズの運動を考えるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \rho = 1.05 \left[ \frac{g}{cm^3} \right]  =1.05 \times 10^3 \left[ \frac{kg}{m^3} \right]  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \eta = 10^{-3} \ Pa \cdot s  \)</p>
+<p class="X-Large-Bold-RED">を使います．</p>
+<p class="X-Large-Bold-RED"><span class="Blue">速度は，円周上の直線速度</span>として考えるとします．</p>
+<p class="X-Large-Bold-RED"><span class="Blue-Bold">半径Ｒ，回転速度, f Hz</span>，の場合，</p>
+<p class="Blue">　円周：2πR<br />
+ 　速度：2πR・f</p>
+<p class="X-Large-Bold-RED">となるので，<span class="Blue-Bold">半径 0.5㎛，100 Hz</span>，の場合，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle v = 2 \pi \cdot 0.5 \times 10^{-6} [m] \cdot 100 [1/s] = 3.14 \times 10^{-4} [m/s] \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle L = 2 R = 2 \cdot 0.5 \times 10^{-6} [m]  = 10^{-6} [m] \)</p>
+<p class="X-Large-Bold-RED">となるので，レイノルズ数は，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle Re =\frac{\rho \ L \ v}{\eta} <br />
+= \frac{  1.05 \times 10^3 \left[ \frac{kg}{m^3} \right] \cdot<br />
+3.14 \times 10^{-4} [m/s] \cdot  10^{-6} [m]}{10^{-3} \ Pa \cdot s} = 0.0003297 \)</p>
+<p class="X-Large-Bold-RED">ととても小さく無視できる値となるので，<span class="Red-Large-Bold">慣性力は無視することができます</span>．</p>
+<p class="X-Large-Bold-RED">ビブリオ菌のように，数百Hzで回転したとしても，一桁程度の変化なので，やはり無視できます．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p>次ページには，<span class="Blue-Bold">運動方程式</span>，から検討していきます．</p>
+<p class="Red-Bold">&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Inertial and centrifugal forces-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Inertial and centrifugal forces-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

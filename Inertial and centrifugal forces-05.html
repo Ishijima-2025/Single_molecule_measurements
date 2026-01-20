@@ -1,0 +1,103 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Inertial and centrifugal forces</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">べん毛モーターの回転計測において，慣性力，遠心力は考慮すべきか？ </p>
+<p class="Blue-Large-Bold">慣性モーメントで考えてみる</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">運動方程式から<span class="Blue-Bold">慣性モーメント</span>を考えていきます．</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m \frac{d^2 x}{dt^2} + \gamma \frac{dx}{dt}   \hspace{12pt} [N]\)</p>
+<p class="X-Large-Bold-RED"><img src="Inertial and centrifugal forces-02.png" width="573" height="316" alt=""/></p>
+<p class="X-Large-Bold-RED">半径Rの円周上を回転する系を考えます．</p>
+<p class="X-Large-Bold-RED">円周上の変位ｘと変位角θとの関係は，半径がＲの場合，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle x = R \ \theta \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle dx = R \ d \theta \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \frac{dx}{dt}  = \frac{dx}{d \theta} \frac{d \theta}{dt} = R \  \frac{d \theta}{dt}  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \frac{d^2 x}{dt^2}  = d \left( R \  \frac{d \theta}{dt} \right) =  R \  \frac{d^2 \theta}{dt^2 }\)</p>
+<p class="X-Large-Bold-RED">となるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m \frac{d^2 x}{dt^2} + \gamma \frac{dx}{dt}  = m R \frac{d^2 \theta}{dt^2} + \gamma R \frac{dx}{d \theta}\)</p>
+<p class="X-Large-Bold-RED">となります．この場合の次元はＮなのでトルクに換算するためにｒを掛けると，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle  m R^2 \frac{d^2 \theta}{dt^2} + \gamma R^2 \frac{dx}{d \theta} \hspace{12pt} [Nm]\)</p>
+<p class="X-Large-Bold-RED">となると，<span class="Red-Bold">慣性モーメント，mR<sup>2</sup></span>，と<span class="Red-Bold">粘性項，γR<sup>2</sup></span>，との関係（比）=<span class="Red-Bold">時定数</span>，は，直線の運動方程式と変わらないことになります．</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \tau \equiv  \frac{m}{\gamma} = \frac{m \ R^2}{\gamma \ R^2 } \)</p>
+<p class="X-Large-Bold-RED">したがって，<span class="Red-Large">慣性モーメントは無視してかまわない</span>，という結論になります．</p>
+<p class="X-Large-Bold-RED">粘性項の係数ですが， <a href="https://ritsumei.repo.nii.ac.jp/record/16947/files/k_1586.pdf" target="_blank">回転粘性抵抗係数</a>，と呼ぶらしいが，あまりネットでは引っかかりません．．．</p>
+<p class="X-Large-Bold-RED">もっと厳密に計算するには，流体力学，ナビエストークスの法則などを勉強するしかないか． </p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">ここで，慣性モーメントの値，ｍR<sup>2</sup>，ですが，これは<a href="https://en.wikipedia.org/wiki/Parallel_axis_theorem" target="_blank">平均軸の定理</a>によるものであり，物体の質量ｍと重心位置と回転中心との距離Rだけで決まるモーメントとなります．</p>
+<p class="X-Large-Bold-RED">ですので，自分自身の自転による慣性モーメントも考慮しなくてはなりません．</p>
+<p class="X-Large-Bold-RED">質量ｍ，半径rの球の慣性モーメントは，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle  \frac{2}{5} mr^2\)</p>
+<p class="X-Large-Bold-RED">公転，自転の粘性抵抗係数は，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle  6 \pi \eta r \ R^2 , \hspace{20pt} 8 \pi \eta r^3\)</p>
+<p class="X-Large-Bold-RED">を加える必要があるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle   (6 \pi \eta r \ R^2 + 8 \pi \eta r^3) \ \)</p>
+<p class="X-Large-Bold-RED">となります．ここで，次元は，</p>
+<p class="X-Large-Bold-RED"><span class="Blue">慣性モーメント：</span>\( \Large     \displaystyle  \left( m R^2 + \frac{2}{5} mr^2 \right) \ : \ [Nms^2]\)</p>
+<p class="X-Large-Bold-RED"><span class="Blue">回転粘性抵抗係数：</span>\( \Large     \displaystyle   (6 \pi \eta r \ R^2 + 8 \pi \eta r^3) \frac{dx}{d \theta} \hspace{12pt} \ : \ [Nms]\) </p>
+<p class="X-Large-Bold-RED">となるので，これらの比＝時定数，を求めることになります．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">水溶液中のポリスチレンビーズの運動を考えるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle r = 0.5 \ \mu m = 5 \times 10^{-7} \ [m]  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle R = 0.5 \ \mu m = 5 \times 10^{-7} \ [m]  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \rho = 1.05 \left[ \frac{g}{cm^3} \right]  =1.05 \times 10^3 \left[ \frac{kg}{m^3} \right]  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \eta = 10^{-3} \ [Pa \cdot s]  \)</p>
+<p class="X-Large-Bold-RED">を使うと，</p>
+<p class="X-Large-Bold-RED"><span class="Blue">質量：</span>\( \Large     \displaystyle m = \frac{4}{3} \pi r3 \rho = \frac{4}{3} \pi \cdot 1.05 \times 10^3  \cdot (  5 \times 10^{-7} )^2 = 7.85 \times 10^{-16} kg \)</p>
+<p class="X-Large-Bold-RED"><span class="Blue">慣性モーメント：</span>\( \Large     \displaystyle m R^2 + \frac{2}{5} mr^2 = 7.85 \times 10^{-16} \cdot 5 \times 10^{-7}  \cdot \left( 5 \times 10^{-7} \right)^2<br />
+  + 8 \pi \cdot 
+\left( 5 \times 10^{-7} \right)^3 <br />
+= 1.96 \times 10^{-28} + 7.85
+\times 10^{-29} = 2.75 \times 10^{-28} [Nms^2] \)</p>
+<p class="X-Large-Bold-RED">となり，偏心における慣性モーメントのほうが自転の時に比べて2.5倍ほど大きいことがわかります．</p>
+<p class="X-Large-Bold-RED"><span class="Blue">回転粘性抵抗係数：</span>\( \Large     \displaystyle   6 \pi \eta r \ R^2 + 8 \pi \eta r^3 = 6 \pi \cdot 10^{-3} \cdot 5 \times 10^{-7}  \cdot \left( 5 \times 10^{-7} \right)^2<br />
+  + 
+8 \pi \cdot 10^{-3} \cdot  \left( 5 \times 10^{-7} \right)^3 \<br />
+= 2.36 \times 10^{-21} + 3.14
+\times 10^{-21} = 5.50 \times 10^{-21} [Nms] \)</p>
+<p class="X-Large-Bold-RED">となり，偏心と自転の粘性抵抗はほぼ同じ大きさとなります．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED"> <span class="Red-Bold">時定数</span>は， </p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle  \frac{ m R^2 + \frac{2}{5} mr^2 }{6 \pi \eta r \ R^2 + 8 \pi \eta r^3} = \frac{2.75 \times 10^{-28} [Nms^2]}{5.50 \times 10^{-21} [Nms]} = 5.00 \times 10^{-8} [s] \)</p>
+<p class="X-Large-Bold-RED">となり，8桁違うので，<span class="Red-Large-Bold">慣性モーメントの影響はない</span>ことがわかります．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="Red-Bold">&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Inertial and centrifugal forces-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

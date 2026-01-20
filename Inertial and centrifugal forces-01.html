@@ -1,0 +1,123 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Inertial and centrifugal forces</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">べん毛モーターの回転計測において，慣性力，遠心力は考慮すべきか？ </p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED"><span class="Blue-Bold">バクテリアのべん毛モーター</span>は，<span class="Blue-Bold">直径が約40nm</span>，という極小の回転モーターであり，そのままではその動きを観察することができません．</p>
+<p class="X-Large-Bold-RED">また，べん毛モーターから伸びているべん毛フィラメントもとてもとても細く，一般的な光学顕微鏡で観察することは不可能です．</p>
+<p class="X-Large-Bold-RED">しかし，<a href="https://www.nature.com/articles/346677a0" target="_blank">レーザー暗視野を用いた計測</a>，<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC101988/" target="_blank">蛍光染色した計測（フィラメントは観察しているが回転は計測していない？）</a>，などいろいろな計測方法があります．</p>
+<p class="X-Large-Bold-RED">しかし，一般的には，<a href="https://www.sciencedirect.com/science/article/pii/S0006349500766628" target="_blank">ポリスチレンビーズをべん毛フィラメントに付着させた実験系</a>が一般的です．　　</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">では，まずは，べん毛モーターの回転計測の<span class="Blue-Bold">基本的な性質</span>を見ていきましょう．</p>
+<p class="Red-Bold">・光学顕微鏡で観察・計測</p>
+<p class="X-Large-Bold-RED">バクテリアが生きている状態で観察する必要がありますので，光学顕微鏡で観察・計測しています．</p>
+<p class="Red-Bold">・水溶液中</p>
+<p class="X-Large-Bold-RED">光学顕微鏡のところとかぶりますが，水溶液中で実験をおこないます．</p>
+<p class="X-Large-Bold-RED">塩，バッファーなどの水溶液ですが，粘性は水とそれほど変わらず，</p>
+<p class="X-Large-Bold-RED">\( \Large     \eta = 10^{-3} \ Pa \cdot s\)</p>
+<p class="X-Large-Bold-RED">とします．ここで，<span class="Blue-Bold">ニュートン流体</span>を考えます．溶液の弾性要素は無視してかまわないこととします．</p>
+<p class="X-Large-Bold-RED">温度は大体室温，25度程度と考えればいいかと思います．</p>
+<p class="X-Large-Bold-RED">もちろん，<a href="https://www.sciencedirect.com/science/article/pii/S0006349500766628" target="_blank">溶液の粘度を変えた実験，温度を変えた実験</a>もあります．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="Red-Bold">・ポリスチレンビーズ</p>
+<p>シリカなどの別素材のビーズを使うこともありますが，ここでは，一般的なポリスチレンビーズについてです．</p>
+<p>ポリスチレンとは，ネット情報では，プラスチック樹脂，ということです．</p>
+<p><a href="https://fnkprddata.blob.core.windows.net/domestic/download/pdf/POL_beads_faq.pdf" target="_blank">ここ</a>，によると，</p>
+<p>　<span class="Blue-Bold">密度：1.05 g/cm<sup>3</sup></span></p>
+<p>となっており，若干水より密度が高い素材となっています．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="Red-Bold">・回転速度</p>
+<p class="X-Large-Bold-RED">回転速度に関しては，菌種，負荷，入力エネルギーなどの条件に依存しますが，大まかな値を表にすると，</p>
+<p class="X-Large-Bold-RED">　<span class="Blue-Bold">・ビブリオ菌</span></p>
+<table width="443" border="1">
+  <tbody>
+    <tr>
+      <td width="170" style="text-align: center">ビーズサイズ (㎛)</td>
+      <td width="75" style="text-align: center">1</td>
+      <td width="75
+                 " style="text-align: center">0.5　</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">速度 (Hz)</td>
+      <td style="text-align: center">150</td>
+      <td style="text-align: center">650</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">トルク (pN・nm)</td>
+      <td style="text-align: center">4,000</td>
+      <td style="text-align: center">1,000</td>
+    </tr>
+  </tbody>
+</table>
+<p class="X-Large-Bold-RED">　<span class="Blue-Bold">・大腸菌</span></p>
+<table width="443" border="1">
+  <tbody>
+    <tr>
+      <td width="170" style="text-align: center">ビーズサイズ (㎛)</td>
+      <td width="75" style="text-align: center">1</td>
+      <td width="75
+                 " style="text-align: center">0.5　</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">速度 (Hz)</td>
+      <td style="text-align: center">50</td>
+      <td style="text-align: center">300</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">トルク (pN・nm)</td>
+      <td style="text-align: center">1,500</td>
+      <td style="text-align: center">700</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p class="Red-Bold">・回転半径</p>
+<p>べん毛フィラメントに固定したビーズの重心位置と回転中心が一致している場合，回転を検出することができませんので，基本的に偏心しているビーズを計測します．</p>
+<p>その回転半径は，フィラメントとビーズの付き方に依存するので，ばらつきますが，</p>
+<p><a href="https://doi.org/10.1016/S0022-2836(03)00176-1" target="_blank">ビブリオ菌</a>の場合：0.5 µm</p>
+<p><a href="https://www.nature.com/articles/nature04003" target="_blank">大腸菌</a>の場合，：0.15 µm</p>
+<p>程度です．</p>
+<p>&nbsp;</p>
+<p>さて，いろいろな手法で検討していきましょう．</p>
+<p>次ページには，<span class="Blue-Bold">レイノルズ数</span>，から検討していきます．</p>
+<p class="Red-Bold">&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Inertial and centrifugal forces-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

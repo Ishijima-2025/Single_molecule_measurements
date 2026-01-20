@@ -1,0 +1,91 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Inertial and centrifugal forces</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">べん毛モーターの回転計測において，慣性力，遠心力は考慮すべきか？ </p>
+<p class="Blue-Large-Bold">遠心力の影響の検討</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">半径Rの円周上を半径ｒのビーズが回転する系を考えます．</p>
+<p class="X-Large-Bold-RED"><img src="Inertial and centrifugal forces-01.png" width="476" height="446" alt=""/></p>
+<p class="X-Large-Bold-RED">遠心力の影響を，回転する際の<span class="Red-Bold">並進の粘性抵抗</span>と比較していきます．</p>
+<p class="X-Large-Bold-RED">遠心力：\( \Large     \displaystyle F_{centrifugal forces}=m' \ R \ \omega^2 \)</p>
+<p class="X-Large-Bold-RED">粘性抵抗：\( \Large     \displaystyle F_{viscosity}= 6 \pi \eta r \cdot v \)</p>
+<p class="X-Large-Bold-RED">となります．ここでｍ‘は浮力を考慮した実効質量です．</p>
+<p class="X-Large-Bold-RED">慣性力の場合には浮力を考慮する必要はありませんが，遠心力の場合には，溶媒の密度との関係が重要となります．</p>
+<p class="X-Large-Bold-RED">例に挙げると，<br>
+  <span class="Blue">　重力という力が働いているときに，木片は落下する（木片の密度</span><span class="Red-Bold">＞</span><span class="Blue">空気の密度）<br>
+  　　　しかし，<br>
+  　水中の木片は上昇する（木片の密度</span><span class="Red-Bold">＜</span><span class="Blue">水の密度）</span><br>
+となります．<span class="Blue">遠心機において，溶媒（水）より軽い油分などは遠心チューブの上面にたまる</span>ことからも理解できます．</p>
+<p class="X-Large-Bold-RED">&nbsp; </p>
+<p class="X-Large-Bold-RED"><span class="Red-Large">遠心力</span>は，</p>
+<p class="X-Large-Bold-RED">実行質量，m'，は同じ体積の溶媒の質量を引いた値なので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m' = V ( \rho_{sample} - \rho_{water}) \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle = \frac{4}{3} \pi r^3  ( 1.05 \times 10^3 - 1.00 \times 10^3) \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle = \frac{4}{3} \pi r^3  \cdot 50 \)</p>
+<p class="X-Large-Bold-RED">水溶液中のポリスチレンビーズの運動を考えるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle r = 0.5 \ \mu m = 5 \times 10^{-7} \ [m]  \)</p>
+<p class="X-Large-Bold-RED">を代入して，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m' = \frac{4}{3} \pi \left( 5 \times 10^{-7} \right)^3  \cdot 50 = 2.6 \times 10^{-17} [kg]\)</p>
+<p class="X-Large-Bold-RED">遠心力は，<span class="Blue-Bold">回転速度が，100 Hz</span>，の場合，回転中の回転半径Rを大きめに，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle R = 0.5 \ \mu m = 5 \times 10^{-7} \ [m]  \)</p>
+<p class="X-Large-Bold-RED">として，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle F_{centrifugal forces}=m' \ R \ \omega^2 = 2.6 \times 10^{-17} \cdot 5 \times 10^{-7} \cdot (200 \pi)^2 = \pi^2 \cdot 5.2 \times 10^{-19} = 5.17 \times 10^{-18} [N] \)</p>
+<p class="X-Large-Bold-RED">となります．</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">一方，<span class="Red-Large">粘性抵抗</span>は，</p>
+<p class="X-Large-Bold-RED">円周上の回転速度は，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle v=\frac{2 \pi R}{ 1/100} = 2 \pi \cdot 5 \times 10^{-7} \cdot \pi \cdot 5 \times 10^{-7} = \pi \cdot 10^{-5} = 3.14 \times 10^{-5} [m/s] \)</p>
+<p class="X-Large-Bold-RED">となるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle F_{viscosity}= 6 \pi \eta r \cdot v = 6 \pi \cdot 10^{-3} \cdot 5 \times 10^{-7} \cdot  3.14 \times 10^{-5} = \pi^3 \cdot 3 \times 10^{-14} = 2.96 \times 10^{-13} [N] \)</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">まとめると，</p>
+<p class="X-Large-Bold-RED"><span class="Red-Bold">遠心力：</span>\( \Large     \displaystyle F_{centrifugal forces} \hspace{10pt} = \ 5.17 \times 10^{-18} [N] \)</p>
+<p class="X-Large-Bold-RED"><span class="Red-Bold">粘性抵抗：</span>\( \Large     \displaystyle F_{viscosity} \hspace{40pt} = \ 2.96 \times 10^{-13} [N] \)</p>
+<p class="X-Large-Bold-RED">となり，<span class="Red-Bold">約5桁遠心力のほうが小さい</span>ことがわかります．</p>
+<p class="X-Large-Bold-RED">したがって，<span class="Red-Large">ミクロな世界での水溶液の回転運動においては，遠心力は無視してかまわない</span>，ことになります<br>
+（非常に高速であったりした場合は適用できませんが．．．）</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">　</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p>次ページには，<span class="Blue-Bold">慣性モーメント</span>，で検討していきます．</p>
+<p class="Red-Bold">&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Inertial and centrifugal forces-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Inertial and centrifugal forces-05.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

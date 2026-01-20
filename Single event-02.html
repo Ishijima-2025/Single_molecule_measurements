@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style2 {color: #0000FF}
+.style3 {
+	font-size: x-large;
+	color: #FF0000;
+}
+.style4 {
+	font-size: large;
+	color: #0000FF;
+}
+.style8 {color: #000000; }
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style2">１分子であることの証明-02</h1>
+<p>残念ながら，我々は相互作用しているイベントが１分子なのかどうなのかを直接確かめる方法はありません．<br />
+しかし，ただ一つ，そのイベントの特徴を判別するものがあります．<br />
+それは，<span class="style3"><br />　
+そのイベントが起こるか，起こらないか</span><br />
+というものです．</p>
+<p>先の例でも，ガラス上にミオシンをまばらに固定しているので，<br />
+  <span class="style4">　たまたまガラス上にはミオシンがいない</span><br />
+状態もあり得るわけです．<br />
+そのときには，どんなにアクチンフィラメントを近づけてもイベントは起こりません．<br />
+もちろん，そのようなイベントが起こらない確率はガラス上に固定するミオシンの量に依存しますね．<br />
+ミオシンの量を多くすればするほど，０である確率が低くなります．<br />
+このことを数式化したのが，あの<span class="style3">ポアッソン分布</span>なのです．</p>
+<p><img src="Single event-01.gif" width="154" height="72" /></p>
+<p>では，イベントが０である場合の確率を計算してみましょう．</p>
+<p><img src="Single event-02.gif" width="216" height="72" /></p>
+<p>つまり，固定するミオシンの量，&lt;n&gt;，が多くなればなるほど，０のイベントの確率は指数関数的に減少していきます．<br />
+また，ミオシンの量を０にすれば，つまり，&lt;n&gt;=0，だと０のイベントの確率は１となり，イベントは起こりません．</p>
+<p>では，イベントが起こる確率は，単純に，</p>
+<p><img src="Single event-03.gif" width="210" height="44" /></p>
+<p>となります．</p>
+<p>これをグラフに記すと，</p>
+<p><img src="Single event-01.JPG" width="470" height="386" /></p>
+<p>となります．<br />
+横軸は，&lt;n&gt;，となります．<br />
+先の実験では，固定するミオシンの量となりますね．</p>
+<p>では，次にここから１分子である確率を見積もりましょう．</p>
+<p><span class="style8"><a href="Single event-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Single event-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+</body>
+</html>

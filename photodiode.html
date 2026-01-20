@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style2 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: x-large;
+}
+.style4 {
+	font-size: large;
+	color: #0000FF;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style1">どのようにナノメートルレベルの変位を計測するの？</h1>
+<p class="style2">さて，原理上は光学顕微鏡の分解能の限界をうけずにナノメートルのオーダーで変位を計測することができることがわかりました．<br />
+では，どのようにして計測するのでしょう？<br />
+それは，<br />
+　<span class="style3">フォトダイオード</span><br />
+を用いるのです．<br />
+フォトダイオードとは，<br />
+　光の量に比例して電流を発生する素子<br />
+です．<br />
+つまり，<br />
+　光の量が増えると，発生する電流の値が増える<br />
+ものです．<br />
+このフォトダイオードを複数（２個もしくは４個）使って，輝点の重心位置の変化を計測するのです．</p>
+<p class="style2">具体的なイメージは，以下のアニメーションをご覧ください．<br />
+  <img src="disp..gif" width="480" height="320" /></p>
+<p class="style2">このように，<span class="style4">２分割，もしくは４分割のフォトダイオード</span>を並べて，その差動出力から変位を電圧として（電流から電圧に変換して）計測するのです．<br />
+我々は元々，<a href="http://user.ecc.u-tokyo.ac.jp/~ckam/" target="_blank">上村先生</a>からこの手法を習いました．<br />
+彼らは分割フォトダイオードの代わりに，プリズムを用い，輝点からの光を２分していました．</p>
+<p class="style2">さて，２分割フォトダイオードの場合，１次元の変位を計測できます．</p>
+<p class="style2"><img src="2-photo.jpg" width="416" height="358" /></p>
+<p class="style2">その際の出力は，<br />
+　Ａ－Ｂ<br />
+となります．</p>
+<p class="style2">さて，４分割の場合はどうでしょう？<br />
+４分割では二次元の変位を計測できます．</p>
+<p class="style2"><img src="4-photo.jpg" width="436" height="371" /></p>
+<p class="style2"><span class="style4">Ｘ方向</span>（画面の横方向とする）の変位は，<br />
+　（Ａ＋Ｃ）－（Ｂ＋Ｄ）<br />
+  <span class="style4">Ｙ方向</span>（画面の縦方向とする）の変位は，<br />
+　（Ａ＋Ｂ）－（Ｃ＋Ｄ）<br />
+となりますね．<br />
+つまり，全部で６つのアンプを組んだ回路を作成しなくてはなりません．<br />
+しかし，回路が複雑になると，作成も大変だし，ノイズも増えてしまいます．</p>
+<p class="style2">そこで，<br />
+　Ａ－Ｄ<br />
+　Ｂ－Ｃ<br />
+という対角線上の差動出力をまず取ります．<br />
+そして，それぞれの差，和，を取ると，<br />
+　（Ａ－Ｄ）－（Ｂ－Ｃ）＝（Ａ＋Ｃ）－（Ｂ＋Ｄ）　＝＞　<span class="style4">Ｘ方向の変位</span><br />
+　（Ａ－Ｄ）＋（Ｂ－Ｃ）＝（Ａ＋Ｂ）－（Ｃ＋Ｄ）　＝＞　<span class="style4">Ｙ方向の変位</span>　<br />
+となります．つまり４つのアンプですむのです．</p>
+<p class="style2">輝点からの光はかなり微弱です．<br />
+ですので，電気回路でかなり増幅します．<br />
+その際に，発生するノイズを以下に低減するか，がこの計測の肝となります．</p>
+<p class="style2">さて，次に，実際の差動出力がどのようなカーブになるかを計算してみましょう．</p>
+<p class="style2"><a href="nano.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Differential-01.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p class="style2"><br />
+</p>
+</body>
+</html>

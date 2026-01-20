@@ -1,0 +1,82 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Inertial and centrifugal forces</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">べん毛モーターの回転計測において，慣性力，遠心力は考慮すべきか？ </p>
+<p class="Blue-Large-Bold">運動方程式からの検討</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p class="X-Large-Bold-RED">運動方程式は，慣性力，粘性力，弾性力で表現できますが，水溶液はニュートン流体を考えますので，弾性要素は無視します．</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m \frac{d^2 x}{dt^2} + \gamma \frac{dx}{dt}  =0 \)</p>
+<p class="X-Large-Bold-RED">ここで，<br />
+　m　：　質量 [kg]<br />
+　γ　：　粘性抵抗係数  [N・s/m]<br />
+　ν　：　動粘性係数 [m<sup>2</sup>/s]<br />
+となります．また，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \tau \equiv  \frac{m}{\gamma} \rightarrow \left[ \frac{kg}{Ns/m} \right]=\left[ kg \cdot \frac{m}{s} \cdot \frac{s^2}{m \cdot kg} \right] =[s] \)</p>
+<p class="X-Large-Bold-RED">を定義します．<span class="Blue-Bold">τは時定数</span>と呼ばれ，次元は，[s]，です．</p>
+<p class="X-Large-Bold-RED">運動方程式，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m \frac{d^2 x}{dt^2} + \gamma \frac{dx}{dt}  =0 \)</p>
+<p class="X-Large-Bold-RED">は，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle m \frac{d v}{dt} + \gamma \ v  =0 \)</p>
+<p class="X-Large-Bold-RED">と速度で考えると，一階微分となり，簡単になります．</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle  \frac{d v}{dt} = - \frac{1}{ \tau} v \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle v = C \cdot exp \left( - \frac{t}{ \tau} \right)\)</p>
+<p class="X-Large-Bold-RED">初期条件，\( \Large     \displaystyle t=0 \rightarrow v=v_0 \)，を代入すると，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle v = v_0 \cdot exp \left( - \frac{t}{ \tau} \right)\)</p>
+<p class="X-Large-Bold-RED">と<span class="Blue">指数関数的</span>に速度は減少し，その時の<span class="Blue">時定数はτ=m/γ</span>となります．したがって，<span class="Blue-Bold">τが慣性力と粘性力との指標の時間スケール</span>となります．</p>
+<p class="X-Large-Bold-RED">ミクロのスケールにおいては，<span class="Blue">半径ｒの球</span>の<span class="Blue">粘性抵抗係数γ</span>は，<span class="Blue">ストークスの法則</span>から，<span class="Red">6πηｒ</span>となるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \tau = \frac{m}{ \gamma} = \frac{4/3 \cdot \pi r^3 \cdot \rho}{6 \pi \eta r}= \frac{2}{9} \frac{ \rho}{ \eta} r^2 \)</p>
+<p class="X-Large-Bold-RED">水溶液中のポリスチレンビーズの運動を考えるので，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle r = 0.5 \ \mu m = 5 \times 10^{-7} \ [m]  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \rho = 1.05 \left[ \frac{g}{cm^3} \right]  =1.05 \times 10^3 \left[ \frac{kg}{m^3} \right]  \)</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \eta = 10^{-3} \ [Pa \cdot s]  \)</p>
+<p class="X-Large-Bold-RED">を使うと，</p>
+<p class="X-Large-Bold-RED">\( \Large     \displaystyle \tau = \frac{2}{9} \frac{ \rho}{ \eta} r^2 = \frac{2}{9} \frac{1.05 \times 10^3 \left[ \frac{kg}{m^3} \right]}{10^{-3} \ [Pa \cdot s]} \cdot<br>
+  \left( 
+5 \times 10^{-7} \ [m] \right)^2 = 5.83 \times 10^{-8} [s] \sim 0.06 \ \mu s\)</p>
+<p class="X-Large-Bold-RED">となり，非常に短い時間で減衰することになります． </p>
+<p class="X-Large-Bold-RED"><a href="https://www.photron.co.jp/service/hsvcam/products/mini-ax/" target="_blank">顕微鏡用の高速度カメラの例</a>として， </p>
+<p class="X-Large-Bold-RED">があるが， <span class="Blue-Bold">最高900,000コマ/秒</span> を実現していますが，1マイクロ秒です．したがって<span class="Red-Large-Bold">慣性力は無視しても構わないことになります． </span></p>
+<p class="X-Large-Bold-RED">　</p>
+<p class="X-Large-Bold-RED">&nbsp;</p>
+<p>次ページには，<span class="Blue-Bold">遠心力</span>，の影響を検討していきます．</p>
+<p class="Red-Bold">&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Inertial and centrifugal forces-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Inertial and centrifugal forces-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
